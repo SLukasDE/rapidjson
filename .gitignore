@@ -1,29 +1,41 @@
-/bin/*
-!/bin/data
-!/bin/encodings
-!/bin/jsonchecker
-!/bin/types
-!/bin/unittestschema
-/build
-/doc/html
-/doc/doxygen_*.db
+# build directory
+build
+
+# # eclipse files
+.project
+.cproject
+.settings
+
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
 *.a
+*.lib
 
-# Temporary files created during CMake build
-CMakeCache.txt
-CMakeFiles
-cmake_install.cmake
-CTestTestfile.cmake
-Makefile
-RapidJSON*.cmake
-RapidJSON.pc
-Testing
-/googletest
-install_manifest.txt
-Doxyfile
-Doxyfile.zh-cn
-DartConfiguration.tcl
-*.nupkg
-
-# Files created by OS
-*.DS_Store
+# Executables
+*.exe
+*.out
+*.app
