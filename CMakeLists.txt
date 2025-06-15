@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 project(rapidjson VERSION 1.0.0
             LANGUAGES CXX)
 
-target_compile_features(rapidjson PUBLIC cxx_std_11)
+set(CMAKE_CXX_STANDARD 17)
 set_property(TARGET rapidjson PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 #include(FetchContent)
