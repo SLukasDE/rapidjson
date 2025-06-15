@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.23)
 project(rapidjson VERSION 1.0.0
             LANGUAGES CXX)
 
+target_compile_features(rapidjson PUBLIC cxx_std_11)
+set_property(TARGET rapidjson PROPERTY POSITION_INDEPENDENT_CODE ON)
+
 #include(FetchContent)
 #FetchContent_Declare(
 #  catch
@@ -55,8 +58,8 @@ add_library(rapidjson STATIC
 )
 
 target_include_directories(rapidjson PUBLIC ./src/main)
-target_compile_features(rapidjson PUBLIC cxx_std_11)
-set_property(TARGET rapidjson PROPERTY POSITION_INDEPENDENT_CODE ON)
+
+add_library(rapidjson::rapidjson ALIAS rapidjson)
 
 install(TARGETS rapidjson
         EXPORT rapidjson-export
