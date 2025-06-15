@@ -4,7 +4,6 @@ project(rapidjson VERSION 1.0.0
             LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-set_property(TARGET rapidjson PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 #include(FetchContent)
 #FetchContent_Declare(
@@ -77,3 +76,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/rapidjsonConfig.cmake
         DESTINATION "lib/cmake"
 )
 
+if(TARGET rapidjson)
+  set_property(TARGET rapidjson PROPERTY POSITION_INDEPENDENT_CODE ON)
+else()
+  message(WARNING "Target 'rapidjson' wurde nicht gefunden!")
+endif()
